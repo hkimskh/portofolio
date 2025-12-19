@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+    <!-- Preconnect for performance (optional) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .font-nav {
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: 4px;
+      }
+
+      .space {
+        letter-spacing: 5px;
+        word-spacing: 30px;
+      }
+
+      .space2 {
+        letter-spacing: 5px;
+        word-spacing: 15px;
+      }
+
+      .space3 {
+        word-spacing: 10px;
+        letter-spacing: 4px;
+      }
+
+      .gede {
+        font-size: clamp(48px, 8vw, 80px);
+      }
+
+      .hover-text:hover {
+        text-decoration: underline;
+        color: red !important;
+      }
+
+      .hover-text2:hover {
+        color: black !important;
+      }
+
+      .btn-hover:hover {
+        background-color: #f8df8b !important;
+      }
+
+      .box-hover:hover {
+        background-color: #f8df8b !important;
+      }
+
+      .font-1 {
+        font-family: "Playfair Display", serif;
+      }
+
+      .font-2 {
+        font-family: "Great Vibes", cursive;
+      }
+
+      .font-3 {
+        font-family: "Yuji Syuku", serif;
+      }
+
+      .font-4 {
+        font-family: "Sawarabi Mincho", serif;
+      }
+
+      .font-5 {
+          font-family: 'DM Sans', sans-serif;
+      }
+
+
+      .frame-outer {
+        border: 1px solid #e6bcbc; /* garis luar */
+        padding: 8px; /* jarak antar garis */
+        display: inline-block;
+      }
+
+      .frame-inner {
+        border: 1px solid #e6bcbc; /* garis dalam */
+        width: 250px;
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background: #f3f1ee;
+      }
+
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* jarak antar box */
+        padding-top: 70px;
+      }
+
+      .box {
+        flex: 1; /* lebar sama */
+        height: 130px; /* tinggi sama */
+      }
+
+      .box-timbul {
+        transition: 0.3s;
+        border-radius: 10px;
+      }
+
+      .box-timbul:hover {
+        transform: translateY(-5px); /* naik 5px */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* bayangan timbul */
+      }
+
+      #home {
+        scroll-margin-top: 120px;
+      }
+
+      #skill {
+        scroll-margin-top: 120px; /* sesuaikan tinggi navbar */
+      }
+
+      #project {
+        scroll-margin-top: 120px;
+      }
+
+      #contact {
+        scroll-margin-top: 120px;
+      }
+
+      /* =========================
+   RESPONSIVE GLOBAL
+   ========================= */
+
+      /* HP (≤ 576px) */
+      @media (max-width: 576px) {
+        .space {
+          word-spacing: 5px;
+          letter-spacing: 3px;
+        }
+
+        .space2 {
+          word-spacing: 5px;
+          letter-spacing: 3px;
+        }
+
+        .gede {
+          font-size: 42px;
+        }
+
+        /* PROFIL */
+        #profil .d-flex {
+          flex-direction: column;
+          gap: 40px;
+        }
+
+        #profil .col {
+          display: flex;
+          justify-content: center;
+        }
+
+        #profil .align-items-center {
+          text-align: left !important;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        #profil .align-items-center h1,
+        #profil .align-items-center p {
+          text-align: left !important;
+        }
+
+        /* SKILL */
+        .wrapper {
+          flex-direction: column;
+        }
+
+        .box {
+          width: 100%;
+        }
+
+        /* PROJECT */
+        #project .col-4 {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        /* CONTACT */
+        #contact .col-md-6:last-child {
+          margin-top: 40px;
+        }
+
+        #contact h4 {
+          margin-top: 20px;
+        }
+
+        /* FOOTER */
+        footer,
+        .text-end {
+          text-align: center !important;
+        }
+      }
+
+      /* Tablet (≤ 768px) */
+      @media (max-width: 768px) {
+        #profil .d-flex {
+          flex-direction: column;
+          gap: 50px;
+        }
+
+        #project .col-4 {
+          width: 100%;
+          margin-bottom: 25px;
+        }
+
+        #contact .row.pt-5 {
+          flex-direction: column;
+          gap: 40px;
+        }
+      }
+
+      
+
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  </head>
+  <body style="padding-top: 0px">
+    <nav
+      class="navbar navbar-expand-lg bg-body-dark fixed-top"
+      style="backdrop-filter: blur(10px); background-color: white"
+    >
+      <div class="container-fluid border-bottom border-black">
+        <a class="navbar-brand text-danger fw-bolder fs-2 ps-5"
+          >ℍ𝕂𝕀𝕄<span class="text-black">𝕊𝕂ℍ</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end fw-normal fs-6 font-nav"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav pe-4">
+            <li class="nav-item">
+              <a
+                class="nav-link active text-secondary hover-text"
+                aria-current="page"
+                href="#home"
+                >HOME</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-text text-secondary" href="#profil"
+                >PROFIL</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-text text-secondary" href="#skill"
+                >SKILL</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-text text-secondary" href="#project"
+                >PROJECT
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-text text-secondary" href="#contact"
+                >CONTACT
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="home" class="min-vh-100">
+      <h1 class="text-center text-danger pb-5" style="padding-top: 120px">
+        ____
+      </h1>
+      <h1 class="font-1 text-center space gede">Abdul Hakim</h1>
+      <h3 class="text-secondary text-center fw-light space2 pt-3">
+        WEB DEVELOPER / STUDENT
+      </h3>
+
+      <div class="text-center pt-5">
+        <a href="#profil"
+          ><h4
+            class="text-light fw-bold text-center btn btn-danger hover-text2 btn-hover box-timbul"
+            type="button"
+          >
+            kenali saya
+          </h4></a
+        >
+      </div>
+    </div>
+    <hr />
+
+    <div
+      data-aos="zoom-in"
+      class="min-vh-100 d-flex justify-content-center align-items-center"
+      id="profil"
+    >
+      <div class="d-flex gap-5 pt-5">
+        <!-- FOTO -->
+        <div class="col">
+          <div class="frame-outer">
+            <div class="frame-inner">
+              <img
+                src="./images/hakim.png"
+                class="img-fluid"
+                alt=""
+              />
+            </div>
+            <p class="text-center pt-4 space2 text-secondary">
+              Lahir : 8,mei,2010
+            </p>
+          </div>
+        </div>
+
+        <!-- teks -->
+        <div class="align-items-center">
+          <p
+            class="text-secondary fw-light text-decoration-underline"
+            style="letter-spacing: 3px"
+          >
+            ABOUT ME
+          </p>
+          <h1 class="font-1 space2">
+            SEKILAS <span class="text-danger">TENTANG</span> SAYA
+          </h1>
+          <p class="pt-4" style="line-height: 1.7">
+            Saya adalah seorang santri di
+            <b>HSI Boarding School Purworejo, Jawa Tengah.</b> <br />
+            saya sedang fokus mendalami <b>web design</b> serta
+            <b>bahasa Arab,</b> <br />
+            dibimbing oleh para guru yang luar biasa dan ahli di bidangnya
+            <br />
+            masing-masing.
+            <br /><br />
+            Saya senang belajar hal baru, terutama yang berkaitan dengan desain,
+            <br />
+            pengembangan diri. <br />
+            Bagi saya, proses belajar adalah perjalanan yang terus <br />
+            berkembang dan penuh tantangan yang menarik.
+          </p>
+          <h2 class="text-danger">____</h2>
+        </div>
+      </div>
+    </div>
+    <hr />
+
+    <div data-aos="fade-up"  id="skill" style="margin-top: 98px" class="min-vh-100">
+      <div>
+        <p
+          class="text-center text-secondary text-decoration-underline"
+          style="letter-spacing: 5px"
+        >
+          EXPERTISE
+        </p>
+        <h1 class="font-2 space text-center" style="margin-top: 20px">
+          Keterampilan & <span class="text-danger">Kemampuan</span>
+        </h1>
+      </div>
+      <div class="wrapper container">
+        <div class="bg-danger box-timbul box-hover box">
+          <h3 class="hover-text2 text-center text-light p-5 pe-auto font-3">
+            HTML
+          </h3>
+        </div>
+        <div class="bg-danger box-timbul box-hover box">
+          <h3 class="hover-text2 text-center text-light p-5 pe-auto font-3">
+            CSS
+          </h3>
+        </div>
+        <div class="bg-danger box-timbul box-hover box">
+          <h3 class="hover-text2 text-center text-light p-5 pe-auto font-3">
+            PYHTON
+          </h3>
+        </div>
+      </div>
+
+      <div style="">
+        <div class="wrapper container">
+          <div class="bg-danger box-timbul box-hover box">
+            <h3 class="hover-text2 text-center text-light p-5 pe-auto font-3">
+              PIXELLAB
+            </h3>
+          </div>
+          <div class="bg-danger box-timbul box-hover box">
+            <h3 class="hover-text2 text-center text-light p-5 pe-auto font-3">
+              CANVA
+            </h3>
+          </div>
+          <div class="bg-danger box-timbul box-hover box">
+            <h3 class="hover-text2 text-center text-light p-5 pe-auto font-3">
+              CAPCUT
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+
+    <div class="" id="project">
+      <div>
+        <p
+          class="text-center text-secondary text-decoration-underline"
+          style="margin-top: 100px; letter-spacing: 4px"
+        >
+          PORTOFOLIO
+        </p>
+        <h1 class="font-2 space text-center mb-5" style="margin-top: 20px">
+          Selected <span class="text-danger">Works</span>
+        </h1>
+      </div>
+      <div class="container mb-5 mt-5 " data-aos="fade-down">
+        <h2 class="text-decoration-underline pb-4 font-5">
+          BAHASA <span class="text-danger">ARAB</span>
+        </h2>
+        <div class="row">
+          <div class="col-4">
+            <div class="card box-timbul glow bg-light box-hover">
+              <iframe
+                width="auto"
+                height="250"
+                src="https://www.youtube.com/embed/EMUcFLh4RAM?si=jWI6emlO9Xp9_odC"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+
+              <div class="card-body text-dark hover-text2">
+                <h5 class="card-title font-4">
+                  Project 1: Orang Tua & Pengalaman
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card box-timbul glow bg-light box-hover">
+              <iframe
+                width="auto"
+                height="250"
+                src="https://www.youtube.com/embed/kCzlKgApBeY?si=cqyzPhz49QP9kSLC"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <div class="card-body text-dark hover-text2">
+                <h5 class="card-title font-4">
+                  Project 2: Syarh Al-quran <br />
+                  TAUBAT
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card box-timbul glow bg-light box-hover">
+              <iframe
+                width="auto"
+                height="250"
+                src="https://www.youtube.com/embed/FhBcPomCt3I?si=JEB5YR2Q-Y0EsTSp"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <div class="card-body text-dark hover-text2">
+                <h5 class="card-title font-4">
+                  Project 3: Short Film <br />
+                  Film pendek Bahasa Arab
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 pt-4">
+            <div class="card box-timbul glow bg-light box-hover">
+              <iframe
+                width="auto"
+                height="250"
+                src="https://www.youtube.com/embed/_RPoDcVY7Yc?si=KatkrCOvTCwt43lz"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <div class="card-body text-dark hover-text2">
+                <h5 class="card-title font-4">
+                  Project 4: Kegiatan harian santri di Pondok
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 pt-4">
+            <div class="card box-timbul glow bg-light box-hover">
+              <a href="https://jam.dev/c/8c76f3ad-cd6c-44df-b389-bef3e873eacf"><img src="./images/arabic.jpg" 
+            style="height: 250px; object-fit: cover;"  
+            class="img-fluid w-100"
+            alt=""></a>
+              <div class="card-body text-dark hover-text2">
+                <h5 class="card-title font-4">Project 4: Qira'atul Kutub</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mb-5 mt-5" data-aos="fade-right">
+        <h2 class="text-decoration-underline pb-4 font-5">
+          Tugas <span class="text-danger">IT</span>
+        </h2>
+        <div class="row">
+          <div class="col-4">
+            <div class="card box-timbul glow bg-light box-hover">
+              <a href="https://hkimskh.github.io/slicing-web-greentech/"
+                 target="_blank"><img 
+                 src="./images/coding1.jpg"
+                 alt=""
+                 class="img-fluid w-100"
+                 style="height: 250px; object-fit: cover;" /></a>
+
+              <div class="card-body text-dark hover-text2">
+                <h5 class="card-title font-4">Project 1: Slicing Web</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card box-timbul glow bg-light box-hover">
+              <a href="https://hkimskh.github.io/web-profile-sederhana/">
+                <img src="./images/coding2.webp" 
+                 alt=""
+                 class="img-fluid w-100"
+                 style="height: 250px; object-fit: cover;" /></a>
+              <div class="card-body text-dark hover-text2">
+                <h5 class="card-title font-4">
+                  Project 2: Biodata Website <br />
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card box-timbul glow bg-light box-hover">
+              <a href="https://github.com/hkimskh/jadwal-shalat">
+                <img src="./images/python2.jpg" 
+                 alt=""
+                 class="img-fluid w-100"
+                 style="height: 250px; object-fit: cover;" /></a>
+              <div class="card-body text-dark hover-text2">
+                <h5 class="card-title font-4">
+                  Project 3: Jadwal adzan 
+                  
+                </h5>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+
+<div class="container mb-5 mt-5" data-aos="fade-right">
+        <h2 class="text-decoration-underline pb-4 font-5">
+          Tugas <span class="text-danger">Tahfidz</span>
+        </h2>
+        <div class="row">
+          <div class="col-4">
+            <div class="card box-timbul glow bg-light box-hover">
+              <img src="./images/quran1.jpg" 
+                 alt=""
+                 class="img-fluid w-100"
+                 style="height: 250px; object-fit: cover;" />
+
+              <div class="card-body text-dark hover-text2">
+                <h5 class="card-title font-4">Project 1: Poster Tahajji</h5>
+                <a target="_blank" href="https://drive.google.com/file/d/13lm_vIu2jZIMcm4xEhFxASn0qAJ-EAfi/view?usp=sharing"><p type="btn" class="rounded-pill btn btn-danger"><b>klik!</b></p></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card box-timbul glow bg-light box-hover">
+              <img src="./images/quran4.jpg" 
+                 alt=""
+                 class="img-fluid w-100"
+                 style="height: 250px; object-fit: cover;" />
+
+              <div class="card-body text-dark hover-text2">
+                <h5 class="card-title font-4">
+                  Project 2: Tasmi' <br />
+                </h5>
+                <a target="_blank" href="https://drive.google.com/file/d/1baQEZIQPobBfNFkS_w4C8JJw97f2IzST/view?usp=sharing"><p type="btn" class="rounded-pill btn btn-danger"><b>klik!</b></p></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card box-timbul glow bg-light box-hover">
+              <img src="./images/quran2.jpg" 
+                 alt=""
+                 class="img-fluid w-100"
+                 style="height: 250px; object-fit: cover;" />
+              <div class="card-body text-dark hover-text2">
+                <h5 class="card-title font-4">
+                  Project 3: Tahajji quran
+                </h5>
+                <a target="_blank" href="https://drive.google.com/file/d/10HhfAAZRPYLH0o0OQCSRhlxYbs9HCYro/view?usp=drive_link"><p type="btn" class="rounded-pill btn btn-danger"><b>klik!</b></p></a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+    <hr />
+    <!-- kon.. -->
+    <div class="container" id="contact" data-aos="zoom-in-up">
+      <div class="row text-center">
+        <div class="mt-5">
+          <!-- contact -->
+          <div class="col">
+            <p class="space2 text-secondary">Get in Touch</p>
+            <h1 class="font-2 space">
+              Let's <span class="text-danger">Connect</span>
+            </h1>
+          </div>
+        </div>
+
+        <div class="row pt-5 text-start">
+          <div class="col-md-6">
+            <h4 class="space3 font-1">Contact Information</h4>
+
+            <a
+              href="mailto:hkimskh@gmail.com"
+              target="_blank"
+              class="d-flex align-items-center gap-3 mt-4 text-decoration-none text-dark"
+            >
+              <img
+                src="images/gmail.png"
+                style="width: 40px; border: 1px solid black; padding: 10px"
+                class="btn-hover"
+              />
+              <p class="mb-0">hkimskh@gmail.com</p>
+            </a>
+
+            <a
+              href="https://wa.me/62895329606552"
+              target="_blank"
+              class="d-flex align-items-center gap-3 mt-4 text-decoration-none text-dark"
+            >
+              <img
+                src="images/WA.png"
+                style="width: 40px; border: 1px solid black; padding: 10px"
+                class="btn-hover"
+              />
+              <p class="mb-0">62895329606552</p>
+            </a>
+
+            <a
+              href="https://www.instagram.com/hkimskh_/"
+              target="_blank"
+              class="d-flex align-items-center gap-3 mt-4 text-decoration-none text-dark"
+            >
+              <img
+                src="images/IG.png"
+                style="width: 40px; border: 1px solid black; padding: 10px"
+                class="btn-hover"
+              />
+              <p class="mb-0">hkimskh_</p>
+            </a>
+          </div>
+
+          <div class="col-md-6">
+            <h4 class="space3 font-1">School</h4>
+            <div class="d-flex align-items-center gap-3 mt-4">
+              <img
+                src="images/location_5174308.png"
+                style="width: 40px"
+                alt=""
+              />
+              <p>
+                SMA IT HSI-IDN Purworejo <br />
+                72WF+64Q, Krajan, Purworejo, Kec. Purworejo, <br />
+                Kabupaten Purworejo, Jawa Tengah, Indonesia
+              </p>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 mt-4">
+              <img
+                src="images/location_5174308.png"
+                style="width: 40px"
+                alt=""
+              />
+              <p>
+                PPS Al-Ukhuwah Sukoharjo <br />
+                Mranggen, RT.03/RW.03, Sawah, Joho, <br />
+                Kec. Sukoharjo, Kabupaten Sukoharjo, <br />
+                Jawa Tengah 57513
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+<!-- footer -->
+    <div class="container mt-5 pb-5 ">
+      <div class="row">
+        <div class="col-md-4">
+          <h2 class="">侍<span class="text-danger">道</span></h2>
+        </div>
+
+        <div class="col-md-4 pt-2 text-center">
+          <footer>© 2025 Abdul Hakim. All rights reserved.</footer>
+        </div>
+
+        <div class="col-md-4 pt-2 text-end">
+          <a href="#home" class="hover-text text-decoration-none text-dark"
+            ><footer>BACK TO TOP 🔼</footer></a
+          >
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+  </body>
+</html>
